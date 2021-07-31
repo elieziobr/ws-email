@@ -8,6 +8,18 @@
 .idea/**/dictionaries
 .idea/**/shelf
 
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
 # AWS User-specific
 .idea/**/aws.xml
 
