@@ -3,9 +3,9 @@
 Aplicação de backend de Envio de E-mail
 
 ## Requisitos para implantação
--Java 8
--Spring Boot 2
--mvn spring-boot:run
+- Java 8
+- Spring Boot 2
+- mvn spring-boot:run
 
 ### Schema do Banco de Dados
 - Banco de Dados em Memória
