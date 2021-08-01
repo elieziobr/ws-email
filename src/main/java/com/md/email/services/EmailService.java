@@ -1,7 +1,7 @@
 package com.md.email.services;
 
 import com.md.email.enums.StatusEmail;
-import com.md.email.models.EmailModel;
+import com.md.email.entities.EmailModel;
 import com.md.email.repositories.EmailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
@@ -35,7 +35,7 @@ public class EmailService {
 
             emailModel.setStatusEmail(StatusEmail.SENT);
         } catch (MailException e) {
-            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
             emailModel.setStatusEmail(StatusEmail.ERROR);
         } finally {
             return emailRepository.save(emailModel);

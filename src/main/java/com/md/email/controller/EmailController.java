@@ -1,9 +1,9 @@
-package com.md.email.controlleres;
+package com.md.email.controller;
 
-import com.md.email.dtos.EmailDto;
-import com.md.email.models.EmailModel;
+import com.md.email.controller.mapper.EmailMapper;
+import com.md.email.dto.EmailDto;
+import com.md.email.entities.EmailModel;
 import com.md.email.services.EmailService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,16 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-//@RequestMapping("/api/emails")
+@RequestMapping("/api/emails")
 public class EmailController {
 
     @Autowired
     EmailService emailService;
 
-    @PostMapping("/api/emails")
+    @PostMapping
     public ResponseEntity<EmailModel> enviarEmail(@RequestBody @Valid EmailDto emailDto) {
-        EmailModel emailModel = new EmailModel();
-        BeanUtils.copyProperties(emailDto, emailModel);
+        EmailModel emailModel = EmailMapper.INSTANCE.toEmailEntity(emailDto);
+        //BeanUtils.copyProperties(emailDto, emailModel);
 
         emailService.enviarEmail(emailModel);
 

@@ -1,4 +1,4 @@
-package com.md.email.dtos;
+package com.md.email.dto;
 
 import lombok.Data;
 

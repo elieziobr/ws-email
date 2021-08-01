@@ -1,12 +1,10 @@
-package com.md.email.models;
+package com.md.email.entities;
 
 import com.md.email.enums.StatusEmail;
 import lombok.Data;
-import lombok.Generated;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
