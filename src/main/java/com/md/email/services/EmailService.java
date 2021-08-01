@@ -10,6 +10,8 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmailService {
@@ -40,5 +42,13 @@ public class EmailService {
         } finally {
             return emailRepository.save(emailModel);
         }
+    }
+
+    public Optional<EmailModel> obterEmailEnviado(Long id) {
+        return emailRepository.findById(id);
+    }
+
+    public List<EmailModel> listarEmailsEnviado() {
+        return emailRepository.findAll();
     }
 }

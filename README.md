@@ -6,13 +6,15 @@ Aplicação de backend de Envio de E-mail
 - Java 8
 - Spring Boot 2
 - mvn spring-boot:run
+- swagger: http://localhost:8080/swagger-ui.html
 
 ### Schema do Banco de Dados
 - Banco de Dados em Memória
 - Criado automaticamente na execução do Flyway.
 
 ### URLs de Comunicação entre Serviços - Sincrono
-
+- https://spring.io/projects/spring-integration
+- https://spring.io/projects/spring-kafka
 
 ### Evento do Kafka consumidos - (Assincrono)
 - N/A

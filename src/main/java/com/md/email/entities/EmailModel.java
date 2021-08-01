@@ -2,6 +2,7 @@ package com.md.email.entities;
 
 import com.md.email.enums.StatusEmail;
 import lombok.Data;
+import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,7 +11,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "TB_EMAIL")
-public class EmailModel implements Serializable {
+public class EmailModel extends RepresentationModel<EmailModel> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
